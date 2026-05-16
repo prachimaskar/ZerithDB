@@ -1,0 +1,24 @@
+{
+  "name": "zerithdb-scheduler",
+  "version": "0.1.0",
+  "description": "Distributed scheduled tasks with leader election for ZerithDB",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "biome lint ./src",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zerithdb-core": "workspace:*",
+    "zerithdb-network": "workspace:*"
+  }
+}
