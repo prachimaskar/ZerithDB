@@ -59,7 +59,7 @@ export class LeaderElection extends EventEmitter<SchedulerEvents> {
 
   // ─── Private ────────────────────────────────────────────────────────────
 
-private electLeader(): void {
+  private electLeader(): void {
     const sorted = [...this.activePeers].sort();
     const newLeader = sorted.at(-1) as PeerId;
     const previous = this.currentLeader;

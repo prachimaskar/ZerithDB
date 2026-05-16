@@ -47,10 +47,7 @@ export class TaskRunner {
     try {
       this.onTaskComplete(task.id);
     } catch (err) {
-      this.onTaskFailed(
-        task.id,
-        err instanceof Error ? err : new Error(String(err))
-      );
+      this.onTaskFailed(task.id, err instanceof Error ? err : new Error(String(err)));
     }
   }
 }
