@@ -29,14 +29,14 @@ export class Scheduler {
     this.election.start();
 
     // Leader bana toh runner shuru karo
-    this.election.on("leader:elected", (_payload) => {
+    this.election.on("leader:elected", () => {
       if (this.election.isLeader) {
         this.runner.start();
       }
     });
 
     // Leader gaya toh runner band karo
-    this.election.on("leader:lost", (_payload) => {
+    this.election.on("leader:lost", () => {
       this.runner.stop();
     });
   }
